@@ -1,15 +1,14 @@
 import React from 'react';
 import {Main} from "../main";
+import {Header} from "../header";
+import {Footer} from "../footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="">
-        <p>
-          Edit and save to reload.
-        </p>
-      </header>
+    <div className='App'>
+      <Header />
       <Main />
+      <Footer />
     </div>
   );
 }

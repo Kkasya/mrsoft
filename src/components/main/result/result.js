@@ -2,7 +2,10 @@ import React from 'react';
 
 const Result = ({result}) => {
 	return (
-		<textarea value={result} readOnly />
+		<>
+			<h3 >Result of search:</h3 >
+			<textarea value={result} readOnly />
+		</>
 	);
 };
 
