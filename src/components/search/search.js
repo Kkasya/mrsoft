@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {TYPEBTN} from "../../common";
 
-const Search = ({data}) => {
-	const btnName = Number.isInteger(data) ? TYPEBTN[0] :	TYPEBTN[1];
+const Search = ({searchTerm, getResult}) => {
+	const btnName = isNaN(searchTerm) ? TYPEBTN.substr :	TYPEBTN.number;
 
 	return (
 		<div className='search'>
-			<button>{btnName}</button>
+			<button onClick={getResult}>{btnName}</button>
 		</div>
 	);
 };

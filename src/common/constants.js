@@ -1,3 +1,7 @@
-const TYPEBTN = ['Get by length', 'Get by substr'];
+const TYPEBTN = {
+		number: 'Get by length',
+		substr: 'Get by substr'
+	}
+;
 
 export {TYPEBTN};
