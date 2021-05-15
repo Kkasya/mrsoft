@@ -1,10 +1,8 @@
 import React from 'react';
 
 const Result = ({result}) => {
-console.log(result)
 	return (
-		<textarea value={result}>
-		</textarea>
+		<textarea value={result} readOnly />
 	);
 };
 

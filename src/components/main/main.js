@@ -6,34 +6,53 @@ import {Result} from "../result";
 import {data} from "../../common/data.json";
 
 const Main = () => {
-	const [searchTerm, setSearchTerm] = useState('');
-	const [result, setResult] = useState('');
+		const [searchTerm, setSearchTerm] = useState('');
+		const [result, setResult] = useState('');
+		const [sensitive, setSensitive] = useState(true);
 
-	const defineSearchTerm = (e) => {
-		const term = e.target.value;
-		setSearchTerm(term);
-	};
+		const searchBySbtr = () => {
+			if (sensitive){
+				return data.filter((word) => word.includes(searchTerm));
+			} else {
+				return data.filter((word) => word.toUpperCase().includes(searchTerm.toUpperCase()));
+			}
+		};
 
-	const getResult = () => {
-		const resultSearch = isNaN(searchTerm) ?
-			data.filter((word) => word.includes(searchTerm)) :
-			data.filter((word) => word.length > searchTerm)
-		setResult(resultSearch);
-	};
+		const searchByLength = () => {
+			return data.filter((word) => word.length > searchTerm);
+		}
 
+		const defineSearchTerm = (e) => {
+			const term = e.target.value;
+			setSearchTerm(term);
+			if (term === '') setResult('');
+		};
 
-return (
-	<div className={"main"} >
-		<Input defineSearchTerm={defineSearchTerm} />
-		<Checkbox />
-		<Search
-			searchTerm={searchTerm}
-			getResult={getResult}
-		/>
-		<Result result={result} />
-	</div >
-);
-}
+		const getResult = () => {
+			if (searchTerm !== '') {
+				const resultSearch = isNaN(searchTerm) ?
+					searchBySbtr() :
+					searchByLength();
+				setResult(resultSearch);
+			}
+		};
+
+		const changeSensitive = (isSensitive) => {
+			setSensitive(isSensitive);
+		};
+
+		return (
+			<div className={"main"} >
+				<Input defineSearchTerm={defineSearchTerm} />
+				<Checkbox changeSensitive={changeSensitive}/>
+				<Search
+					searchTerm={searchTerm}
+					getResult={getResult}
+				/>
+				<Result result={result} />
+			</div >
+		);
+	}
 ;
 
 export {Main};
