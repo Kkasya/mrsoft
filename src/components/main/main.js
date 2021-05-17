@@ -27,7 +27,7 @@ const Main = () => {
 
 		const searchByLength = () => {
 			return data.filter((word) => word.length > searchTerm);
-		}
+		};
 
 		const defineSearchTerm = (e) => {
 			const term = e.target.value;
