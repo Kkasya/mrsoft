@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
 
 	return (
-		<div className='footer' >
+		<footer >
 			<div className='footer__developer'>
 				<span >Anastassia Kozlovskaya</span >
 				<span >
@@ -15,7 +15,7 @@ const Footer = () => {
 				</span >
 			</div >
 			<span >2021</span >
-		</div >
+		</footer >
 	);
 };
 
