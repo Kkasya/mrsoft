@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "mrsoft.by/*"
+  to = "http://www.mrsoft.by/"
+  status = 200
