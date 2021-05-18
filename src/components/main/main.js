@@ -3,7 +3,7 @@ import {Input} from "./input";
 import {Checkbox} from "./checkbox";
 import {Search} from "./search";
 import {Result} from "./result";
-import {getData} from "../../common/words";
+import {getData} from "../../common";
 
 const Main = () => {
 		const [searchTerm, setSearchTerm] = useState('');
