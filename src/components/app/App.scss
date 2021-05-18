@@ -1,21 +1,24 @@
-body {
+body, html {
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
- // height: 100vh;
+  font-size: 10px;
   & > * {
     box-sizing: border-box;
+  }
+
+  @media (max-width: 1000px) {
+    font-size: 8px;
   }
 }
 
 h1 {
+  font-size: 3rem;
   text-align: center;
   color: #140842;
 }
 
 header {
-  min-height: 20%;
+  min-height: 15%;
   text-align: center;
 }
 
@@ -29,4 +32,12 @@ p {
   height: 100vh;
   justify-content: space-between;
   padding: 0 20%;
+
+  @media (max-width: 1000px) {
+    padding: 0 10%;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 5%;
+  }
 }
