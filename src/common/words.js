@@ -1,7 +1,6 @@
 const getData = async () => {
-	const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 	const targetUrl = 'http://www.mrsoft.by/data.json';
-	const res = await fetch(proxyUrl + targetUrl);
+	const res = await fetch(targetUrl);
 	if (!res.ok) {
 		throw new Error('data not available');
 	}
