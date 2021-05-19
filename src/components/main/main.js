@@ -17,6 +17,17 @@ const Main = () => {
 			 });
 		 }, []);
 
+	// useEffect(() => {
+	// 	axios
+	// 		.get('data.json')
+	// 		.then(function (response) {
+	// 			console.log(response);
+	// 		})
+	// 		.catch(function (error) {
+	// 			console.log(error);
+	// 		});
+	// });
+
 		const searchBySbtr = () => {
 			if (sensitive){
 				return data.filter((word) => word.includes(searchTerm));
